@@ -27,14 +27,14 @@ const Header = () => {
 
 
             <Nav className="mr-auto">
-            <Nav.Link href="#home"><span className="topicPadding">News</span></Nav.Link>
-            <Nav.Link href="#link"><span className="topicPadding">Destination</span></Nav.Link>
-            <Nav.Link href="#link"><span className="topicPadding">Blog</span></Nav.Link>
-            <Nav.Link href="#link"><span className="topicPadding">Contact</span></Nav.Link>
+            <Nav.Link href="/home"><span className="topicPadding">Home</span></Nav.Link>
+            <Nav.Link href="/destination"><span className="topicPadding">Destination</span></Nav.Link>
+            <Nav.Link href="/blog"><span className="topicPadding">Blog</span></Nav.Link>
+            <Nav.Link href="/contact"><span className="topicPadding">Contact</span></Nav.Link>
             </Nav>
 
             <Form inline>
-            <Button variant="warning" className="logInbutton ">Login</Button>
+            <Button variant="warning" className="logInbutton" href="/login">Login</Button>
             </Form>
             
 

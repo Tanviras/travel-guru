@@ -1,0 +1,15 @@
+.card {
+    width: 230px;
+    height: 354px;
+    border-radius: 20px !important;
+    margin-right:14px;
+  }
+
+.card:hover {
+    border: 2px solid green;
+  }
+
+
+
+
+
