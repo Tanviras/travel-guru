@@ -10,11 +10,15 @@ import {
   Switch,
   Route,
 } from "react-router-dom";
+import { createContext, useState } from 'react';
 
 
+export const UserContext = createContext();
 
-function App() {
+function App(props) {
+  const [loggedInUser, setLoggedInUser] = useState({});
   return (
+    <UserContext.Provider value = {[loggedInUser, setLoggedInUser]}>
     <div className="App">
       <Router>
       <Header></Header>
@@ -43,6 +47,7 @@ function App() {
         </Switch>
       </Router>
     </div>
+    </UserContext.Provider>
   );
 }
 
