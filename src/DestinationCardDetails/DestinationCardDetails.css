@@ -1,7 +1,21 @@
-.bgImageStyles{
+.bgImageStyles {
     background-repeat: no-repeat;
     background-position: center;
-    width:2000px;
-    height:1500px;
+    width:1150px;
+    height:2100px;
     background-size: cover;
 }
+
+.containerStyles{
+    text-align: center;
+    color:white;
+    padding-top: 20%;
+    padding-bottom: 40%;
+}
+
+/* body {
+    background-image: url("../../resources/image/home-bg.png");
+    background-repeat: no-repeat;
+    background-size: cover;
+    color: white;
+  } */

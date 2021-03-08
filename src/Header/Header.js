@@ -1,5 +1,6 @@
 import React from 'react';
 import { Button, Form, FormControl, Nav, Navbar} from 'react-bootstrap';
+import { Link } from 'react-router-dom';
 import  Logo from '../Logo.png';
 import './Header.css';
 
@@ -33,9 +34,11 @@ const Header = () => {
             <Nav.Link href="/contact"><span className="topicPadding">Contact</span></Nav.Link>
             </Nav>
 
+            <Link to="/login">
             <Form inline>
             <Button variant="warning" className="logInbutton">Login</Button>
             </Form>
+            </Link>
             
 
             </Navbar.Collapse>

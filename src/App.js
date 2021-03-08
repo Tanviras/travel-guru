@@ -2,14 +2,15 @@ import './App.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import Header from './Header/Header';
 import Home from './Home/Home';
+import DestinationCardDetails from './DestinationCardDetails/DestinationCardDetails';
+import Login from './Login/Login';
+import NotFound from './NotFound/NotFound';
 import {
   BrowserRouter as Router,
   Switch,
   Route,
 } from "react-router-dom";
-import DestinationCardDetails from './DestinationCardDetails/DestinationCardDetails';
-import Login from './Login/Login';
-import NotFound from './NotFound/NotFound';
+
 
 
 function App() {
