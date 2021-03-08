@@ -5,7 +5,6 @@ import './Destination.css';
 
 const Destination = () => {
     const [destinations,setDestinations]=useState(fakeData);
-    // console.log(destinations);
     return (
         <div className="cardsPosition">
             {

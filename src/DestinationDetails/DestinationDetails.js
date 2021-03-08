@@ -1,6 +1,5 @@
 import {Button} from 'react-bootstrap';
 import React from 'react';
-import fakeData from '../fakeData/fakeData';
 import './DestinationDetails.css';
 // import { Icon } from '@material-ui/core';
 import ArrowForwardIcon from '@material-ui/icons/ArrowForward';

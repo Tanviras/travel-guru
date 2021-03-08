@@ -7,17 +7,19 @@ import {
   Switch,
   Route,
 } from "react-router-dom";
-import DestinationHotelDetails from './DestinationHotelDetails/DestinationHotelDetails';
+import DestinationCardDetails from './DestinationCardDetails/DestinationCardDetails';
+import Login from './Login/Login';
+import NotFound from './NotFound/NotFound';
 
 
 function App() {
   return (
     <div className="App">
-      <Header></Header>
       <Router>
+      <Header></Header>
         <Switch>
 
-          <Route path='/'>
+          <Route exact path='/'>
           <Home></Home>
           </Route>
 
@@ -25,11 +27,17 @@ function App() {
           <Home></Home>
           </Route>
 
-          <Route path='/destination/:placeId'>
-          <DestinationHotelDetails></DestinationHotelDetails>
+          <Route path="/destination/:placeId">
+            <DestinationCardDetails></DestinationCardDetails>
           </Route>
           
+          <Route path="/login">
+            <Login></Login>
+          </Route>
 
+          <Route path="*">
+            <NotFound></NotFound>
+          </Route>
       
         </Switch>
       </Router>

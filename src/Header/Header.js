@@ -34,7 +34,7 @@ const Header = () => {
             </Nav>
 
             <Form inline>
-            <Button variant="warning" className="logInbutton" href="/login">Login</Button>
+            <Button variant="warning" className="logInbutton">Login</Button>
             </Form>
             
 
