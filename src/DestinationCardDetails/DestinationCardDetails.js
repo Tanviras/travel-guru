@@ -5,6 +5,7 @@ import fakeData from '../fakeData/fakeData';
 import './DestinationCardDetails.css';
 import ArrowForwardIcon from '@material-ui/icons/ArrowForward';
 import { Link } from 'react-router-dom';
+import Booking from '../Booking/Booking';
 
 const DestinationCardDetails = () => {
     const { placeId } = useParams();
@@ -23,12 +24,13 @@ const DestinationCardDetails = () => {
             <Container className='containerStyles'>
             <h1>Welcome to {name}</h1>
             <h6>{description}</h6>
-            <Link to="/login">
+            {/* <Link to='/bookedPlace/:placeId'>
             <Button variant="warning" className="bookingButton ">
             Booking
             <ArrowForwardIcon/>
             </Button>
-            </Link>
+            </Link> */}
+            <Booking placeId={placeId}></Booking>
             </Container>
         </div>
     );

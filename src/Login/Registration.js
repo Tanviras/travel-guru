@@ -4,74 +4,71 @@ import { UserContext } from '../App';
 import firebase from "firebase/app";
 import "firebase/auth";
 import firebaseConfig from './firebase.config';
-import { Button, Checkbox, Container, CssBaseline, FormControlLabel, Grid, Link, makeStyles, TextField, Typography} from '@material-ui/core';
-import { useForm } from "react-hook-form";
+import { Button, Container, CssBaseline, Grid, Link, makeStyles, TextField, Typography } from '@material-ui/core';
 import logo from '../Logo.png';
 import googleIcon from '../Icon/google.png';
 import fbIcon from '../Icon/fb.png';
-import './Login.css';
+import { useForm } from 'react-hook-form';
 
 
 //useStyles-start
 const useStyles = makeStyles((theme) => ({
-  paper: {
-    marginTop: theme.spacing(8),
-    display: "flex",
-    flexDirection: "column",
-    alignItems: "center",
-  },
-  avatar: {
-    margin: theme.spacing(1),
-    backgroundColor: theme.palette.secondary.main,
-  },
-  form: {
-    width: "100%", // Fix IE 11 issue.
-    marginTop: theme.spacing(1),
-  },
-  submit: {
-    margin: theme.spacing(3, 0, 2),
-  },
-}));
-//useStyles-end
+    paper: {
+      marginTop: theme.spacing(8),
+      display: "flex",
+      flexDirection: "column",
+      alignItems: "center",
+    },
+    avatar: {
+      margin: theme.spacing(1),
+      backgroundColor: theme.palette.secondary.main,
+    },
+    form: {
+      width: "100%", // Fix IE 11 issue.
+      marginTop: theme.spacing(1),
+    },
+    submit: {
+      margin: theme.spacing(3, 0, 2),
+    },
+  }));
+  //useStyles-end
 
 
 
-
-
-//socialStyles-start
+  //socialStyles-start
 const socialStyles = makeStyles((theme) => ({
-  root: {
-    flexGrow: 1,
-  },
-  paper: {
-    padding: theme.spacing(2),
-    textAlign: "center",
-    color: theme.palette.text.secondary,
-  },
-}));
-//socialStyles-end
+    root: {
+      flexGrow: 1,
+    },
+    paper: {
+      padding: theme.spacing(2),
+      textAlign: "center",
+      color: theme.palette.text.secondary,
+    },
+  }));
+  //socialStyles-end
 
 
 
 
 
-const Login = () => {
-  const [loggedInUser, setLoggedInUser] = useContext(UserContext);
-  const history = useHistory();
-  const location = useLocation();
-  const { from } = location.state || { from: { pathname: "/" } };
+const Registration = () => {
+    const [loggedInUser, setLoggedInUser] = useContext(UserContext);
+    const history = useHistory();
+    const location = useLocation();
+    const { from } = location.state || { from: { pathname: "/" } };
 
+    if (firebase.apps.length === 0) {
+        firebase.initializeApp(firebaseConfig);
+      }
 
-  if (firebase.apps.length === 0) {
-    firebase.initializeApp(firebaseConfig);
-  }
+      const classes = useStyles();
+      const socialClasses = socialStyles();
 
-  const classes = useStyles();
-  const socialClasses = socialStyles();
-
+      
   const provider = new firebase.auth.GoogleAuthProvider();
   var fbProvider = new firebase.auth.FacebookAuthProvider();
-  
+
   const handleGoogleSignIn = () => {
     firebase
       .auth()
@@ -95,6 +92,8 @@ const Login = () => {
   };
 
 
+
+
   const handleFbSignIn = () => {
     firebase
       .auth()
@@ -116,7 +115,7 @@ const Login = () => {
         // ...
       });
   };
-  
+
 
 
   const { register, handleSubmit } = useForm();
@@ -124,7 +123,7 @@ const Login = () => {
   const onSubmit = (e) => {
     firebase
       .auth()
-      .signInWithEmailAndPassword(e.email, e.password)
+      .createUserWithEmailAndPassword(e.email, e.password)
       .catch(function (error) {
         // Handle Errors here.
         var errorCode = error.code;
@@ -133,26 +132,38 @@ const Login = () => {
       });
   };
 
-  return (
-    <>
-<Container className="loginContainer" component="main" maxWidth="xs">
-<CssBaseline/>
-<div className={classes.paper}>
-<img
-    style={{ width: "100px", paddingTop: "10px" }}
-    src={logo}
-    alt=""
-    srcSet=""
-    />
-<Typography component="h1" variant="h5">
-            Login
-</Typography>
-
-           <form
+    return (
+        <>
+      <Container className="loginContainer" component="main" maxWidth="xs">
+        <CssBaseline />
+        <div className={classes.paper}>
+          <img
+            style={{ width: "100px", paddingTop: "10px" }}
+            src={logo}
+            alt=""
+            srcSet=""
+          />
+          <Typography component="h1" variant="h5">
+            Sign up
+          </Typography>
+          <form
             onSubmit={handleSubmit(onSubmit)}
             className={classes.form}
             noValidate
-            >
+          >
+            <Grid item>
+              <TextField
+                autoComplete="fname"
+                name="name"
+                variant="outlined"
+                inputRef={register}
+                required
+                fullWidth
+                id="name"
+                label="Name"
+                autoFocus
+              />
+            </Grid>
             <TextField
               variant="outlined"
               margin="normal"
@@ -177,48 +188,27 @@ const Login = () => {
               id="password"
               autoComplete="current-password"
             />
-            <FormControlLabel
-              control={
-                <Checkbox
-                  inputRef={register}
-                  name="remember"
-                  color="primary"
-                  defaultValue={false}
-                />
-              }
-              label="Remember me"
-            />
-             <Button
+
+            <Button
               type="submit"
               fullWidth
               variant="contained"
               color="primary"
               className={classes.submit}
             >
-              Login
+              Sign Up
             </Button>
-
             <Grid container>
-              <Grid item xs>
-                <Link href="#" variant="body2">
-                  Forgot password?
-                </Link>
-              </Grid>
               <Grid item>
-                <Link href="/register" variant="body2">
-                  {"Don't have an account? Sign Up"}
+                <Link href="/login" variant="body2">
+                  {"Already have an account? Sign In"}
                 </Link>
               </Grid>
             </Grid>
-
           </form>
-</div>
-
-</Container>
-
-
-
-<center>
+        </div>
+      </Container>
+      <center>
         <h3 style={{ color: "white", marginTop: "15px" }}>Or</h3>
         <button onClick={handleGoogleSignIn} className="socialButton">
           <div className={socialClasses.root}>
@@ -263,7 +253,7 @@ const Login = () => {
         </button>
       </center>
     </>
-  );
+    );
 };
 
-export default Login;
+export default Registration;

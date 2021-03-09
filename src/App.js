@@ -11,6 +11,9 @@ import {
   Route,
 } from "react-router-dom";
 import { createContext, useState } from 'react';
+import Registration from './Login/Registration';
+import DestinationBookedDetails from './DestinationBookedDetails/DestinationBookedDetails';
+
 
 
 export const UserContext = createContext();
@@ -36,9 +39,18 @@ function App(props) {
             <DestinationCardDetails></DestinationCardDetails>
           </Route>
           
-          <Route path="/login">
+          <Route exact path="/login">
             <Login></Login>
           </Route>
+
+          <Route path='/register'>
+            <Registration></Registration>
+          </Route>
+
+          <Route path="/booked/:placeId">
+            <DestinationBookedDetails></DestinationBookedDetails>
+          </Route>
+
 
           <Route path="*">
             <NotFound></NotFound>
