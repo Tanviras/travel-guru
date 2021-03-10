@@ -9,7 +9,7 @@ const DestinationBookedDetails = () => {
     let { placeId } = useParams();
     
     return (
-        <div>
+        <div className='hotelPage'>
             <div className="hotelRooms">
             <p>252 stays April 13-17 3 guests</p>
             <h3>Stay in Cox's Bazar</h3>

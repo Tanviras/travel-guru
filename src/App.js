@@ -23,6 +23,7 @@ function App(props) {
   const [loggedInUser, setLoggedInUser] = useState({});
   return (
     <UserContext.Provider value = {[loggedInUser, setLoggedInUser]}>
+    <p>Name: {loggedInUser.name}</p>
     <div className="App">
       <Router>
       <Header></Header>

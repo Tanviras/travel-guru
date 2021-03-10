@@ -1,4 +1,5 @@
 import React from 'react';
+import "bootstrap/dist/css/bootstrap.min.css";
 import { Col, Row } from 'react-bootstrap';
 import Destination from '../Destination/Destination';
 import DestinationDetails from '../DestinationDetails/DestinationDetails';

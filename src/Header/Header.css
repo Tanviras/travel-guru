@@ -4,9 +4,11 @@
 
 .topicPadding{
     padding-left:50px;
+    color:white !important;
 }
 
 .logInbutton{
     width:100px;
     margin-right:100px;
+    color: black !important;
 }

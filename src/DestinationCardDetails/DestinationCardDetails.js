@@ -1,4 +1,4 @@
-import {Button, Container} from 'react-bootstrap';
+import {Button, Col, Container, Row} from 'react-bootstrap';
 import React from 'react';
 import { useParams } from 'react-router';
 import fakeData from '../fakeData/fakeData';
@@ -22,15 +22,16 @@ const DestinationCardDetails = () => {
     return (
         <div style={backgroundstyles} className='bgImageStyles'>
             <Container className='containerStyles'>
+            <Row>
+            <Col>
             <h1>Welcome to {name}</h1>
-            <h6>{description}</h6>
-            {/* <Link to='/bookedPlace/:placeId'>
-            <Button variant="warning" className="bookingButton ">
-            Booking
-            <ArrowForwardIcon/>
-            </Button>
-            </Link> */}
+            <p><small>{description}</small></p>
+            </Col>
+
+            <Col>
             <Booking placeId={placeId}></Booking>
+            </Col>
+            </Row>
             </Container>
         </div>
     );
