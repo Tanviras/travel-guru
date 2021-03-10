@@ -16,11 +16,11 @@ const DestinationCardDetails = () => {
     const {name,description,photo}=destination;
     
     
-    const backgroundstyles={
-        backgroundImage:`url(${photo})`,
-    }
+    // const backgroundstyles={
+    //     backgroundImage:`url(${photo})`,
+    // }
     return (
-        <div style={backgroundstyles} className='bgImageStyles'>
+        <div className='bgImageStyles'>
             <Container className='containerStyles'>
             <Row>
             <Col>

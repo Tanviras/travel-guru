@@ -6,45 +6,46 @@ import './Header.css';
 
 const Header = () => {
     return (
-        <div>
-            <Navbar expand="lg">
-            <Navbar.Brand href="#home">
-                <img
-                src={Logo}
-                alt=""
-                width="100"
-                height="50"
-                className="d-inline-block align-top"
-                />{' '}
+      <div className="container">
+        <Navbar className="mt-3" bg="transparent" variant="dark">
+          <Link to="/home">
+            <Navbar.Brand>
+              <img id="logo" src={Logo} alt="Travel Guru" srcSet="" />
             </Navbar.Brand>
-
-            <Navbar.Toggle aria-controls="basic-navbar-nav" />
-            <Navbar.Collapse id="basic-navbar-nav">
- 
-            <Form inline className="searchPadding">
-            <FormControl type="text" placeholder="Search your destination" className="mr-sm-2" />
-            </Form>
-
-
-
-            <Nav className="mr-auto">
-            <Nav.Link href="/home"><span className="topicPadding">Home</span></Nav.Link>
-            <Nav.Link href="/destination"><span className="topicPadding">Destination</span></Nav.Link>
-            <Nav.Link href="/blog"><span className="topicPadding">Blog</span></Nav.Link>
-            <Nav.Link href="/contact"><span className="topicPadding">Contact</span></Nav.Link>
-            </Nav>
-
-            <Link to="/login">
-            <Form inline>
-            <Button variant="warning" className="logInbutton">Login</Button>
-            </Form>
-            </Link>
-            
-
-            </Navbar.Collapse>
-            </Navbar>
-        </div>
+          </Link>
+  
+          <Form inline>
+            <FormControl
+              id="searchBar"
+              type="text"
+              placeholder="Search Your Destination..."
+              className="mr-sm-2"
+            ></FormControl>
+          </Form>
+          
+          <Nav>
+            <Nav.Link className="ml-5" href="/home">
+              Home
+            </Nav.Link>
+            <Nav.Link className="ml-3" href="/destination">
+              Destination
+            </Nav.Link>
+            <Nav.Link className="ml-3" href="/blog">
+              Blog
+            </Nav.Link>
+            <Nav.Link className="ml-3" href="/contact">
+              Contact
+            </Nav.Link>
+            <button className="ml-3  loginButton">
+              <Nav.Link href="/login" className="loginButtonText">
+                Login
+              </Nav.Link>
+            </button>
+          </Nav>
+          
+        </Navbar>
+      </div>
     );
-};
+  };
 
-export default Header;
+  export default Header;
