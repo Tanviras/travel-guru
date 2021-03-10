@@ -194,6 +194,7 @@ const Login = () => {
               variant="contained"
               color="primary"
               className={classes.submit}
+              onClick={handleGoogleSignIn}
             >
               Login
             </Button>

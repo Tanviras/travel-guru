@@ -13,6 +13,7 @@ import {
 import { createContext, useState } from 'react';
 import Registration from './Login/Registration';
 import DestinationBookedDetails from './DestinationBookedDetails/DestinationBookedDetails';
+import PrivateRoute from './PrivateRoute/PrivateRoute';
 
 
 
@@ -47,9 +48,9 @@ function App(props) {
             <Registration></Registration>
           </Route>
 
-          <Route path="/booked/:placeId">
+          <PrivateRoute path="/booked/:placeId">
             <DestinationBookedDetails></DestinationBookedDetails>
-          </Route>
+          </PrivateRoute>
 
 
           <Route path="*">
