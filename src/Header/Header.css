@@ -1,6 +1,7 @@
 #logo {
   width: 120.26px;
 }
+
 #searchBar {
   background-color: rgba(255, 255, 255, 0.2) !important;
   border: 1px solid white !important;
@@ -10,6 +11,7 @@
 .form-control::placeholder {
   color: white;
 }
+
 
 .headerLinks{
     color: white;
@@ -27,3 +29,4 @@
 .loginButtonText {
   color: black !important;
 }
+

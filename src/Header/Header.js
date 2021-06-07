@@ -2,15 +2,17 @@ import React from 'react';
 import { Button, Form, FormControl, Nav, Navbar} from 'react-bootstrap';
 import { Link } from 'react-router-dom';
 import  Logo from '../Logo.png';
+import logoWhite from '../Image/logo-white.svg';
 import './Header.css';
 
 const Header = () => {
     return (
       <div className="container">
         <Navbar className="mt-3" bg="transparent" variant="dark">
+
           <Link to="/home">
-            <Navbar.Brand>
-              <img id="logo" src={Logo} alt="Travel Guru" srcSet="" />
+            <Navbar.Brand style={{paddingRight:'200'}}>
+              <img id="logo" src={logoWhite} alt="Travel Guru"/>
             </Navbar.Brand>
           </Link>
   
@@ -25,20 +27,20 @@ const Header = () => {
           
           <Nav>
             <Nav.Link className="ml-5" href="/home">
-              Home
+             <span style={{color:'white'}}>Home</span> 
             </Nav.Link>
             <Nav.Link className="ml-3" href="/destination">
-              Destination
+              <span style={{color:'white'}}>Destination</span>
             </Nav.Link>
             <Nav.Link className="ml-3" href="/blog">
-              Blog
+              <span style={{color:'white'}}>Blog</span>
             </Nav.Link>
             <Nav.Link className="ml-3" href="/contact">
-              Contact
+              <span style={{color:'white'}}>Contact</span>
             </Nav.Link>
             <button className="ml-3  loginButton">
               <Nav.Link href="/login" className="loginButtonText">
-                Login
+                <span style={{color:'white'}}>Login</span>
               </Nav.Link>
             </button>
           </Nav>
@@ -47,5 +49,7 @@ const Header = () => {
       </div>
     );
   };
+
+  
 
   export default Header;
